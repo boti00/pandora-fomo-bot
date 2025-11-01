@@ -3,7 +3,6 @@ import os
 import logging
 from telegram import Update
 from telegram.ext import Application, CommandHandler, ContextTypes
-import asyncio
 
 # Configuración
 TOKEN = os.getenv('BOT_TOKEN')
@@ -13,11 +12,11 @@ logging.basicConfig(level=logging.INFO)
 
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await update.message.reply_text(
-        '🤖 **PandoraFOMO Bot Activado**\n\n'
+        '🤖 **¡PandoraFOMO Bot ACTIVADO!**\n\n'
         '✅ _Sistema de señales 24/7 operativo_\n'
-        '📰 _Noticias de alto impacto_\n'
+        '📰 _Noticias de alto impacto_\n'  
         '🚨 _Alertas en tiempo real_\n\n'
-        '🔥 _Configuración completada con éxito!_'
+        '🔥 _¡Configuración completada con éxito!_'
     )
 
 async def status(update: Update, context: ContextTypes.DEFAULT_TYPE):
@@ -32,7 +31,7 @@ def main():
         application.add_handler(CommandHandler("start", start))
         application.add_handler(CommandHandler("status", status))
         
-        # Iniciar bot con polling (más simple para empezar)
+        # Iniciar bot
         print("🚀 Iniciando bot...")
         application.run_polling()
         
