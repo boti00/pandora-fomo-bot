@@ -1,6 +1,6 @@
 services:
   - type: web
-    name: pandora-fomo-bot
+    name: pandora-bot-definitivo
     env: python
     plan: free
     buildCommand: pip install -r requirements.txt
